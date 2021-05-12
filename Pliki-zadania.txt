@@ -1,0 +1,386 @@
+Zadanie 1 & 2
+
+import os.path
+import os
+import random
+def tworzeniepliku(folder):
+    save_path = folder
+    for i in range(50):
+        alfabet = "abcdefghijklmnoprstuwyz"
+        lista = [ ]
+        los=random.randrange(20)
+        for i in range(0,los):
+            litera = random.choice(alfabet)
+            lista.append(litera)
+            ciag_znakow = "".join(lista)
+        name_of_file = ciag_znakow
+        completeName = os.path.join(save_path, name_of_file+".txt")         
+        file1 = open(completeName, "w")
+        file1.close()
+
+folder="C:\\"+input(("wpisz nazwe folderu"))
+if not os.path.exists(folder):
+    os.makedirs(folder)
+tworzeniepliku(folder)
+
+zadanie 3
+
+
+import os.path
+import os
+import random
+def tworzeniepliku(folder):
+    save_path = folder
+    for i in range(50):
+        alfabet = "abcdefghijklmnoprstuwyz"
+        lista = [ ]
+        los=random.randrange(20)
+        for i in range(0,los):
+            litera = random.choice(alfabet)
+            lista.append(litera)
+            ciag_znakow = "".join(lista)
+        name_of_file = ciag_znakow
+        completeName = os.path.join(save_path, name_of_file+".txt")         
+        file1 = open(completeName, "w")
+        cyfry=[]
+        liczby="123456789"
+        for i in range(10):
+            los1=random.choice(liczby)
+            cyfry.append(los1)
+            toFile="".join(cyfry)
+        file1.write(toFile)
+        file1.close()
+
+folder="C:\\"+input(("wpisz nazwe folderu"))
+if not os.path.exists(folder):
+    os.makedirs(folder)
+tworzeniepliku(folder)
+
+zadanie 4
+
+import os.path
+import os
+import random
+nazwa=input(("podaj nazwe pliku"))
+zawartoœæ=input(("podaj zawartoœæ pliku"))
+plik=open(nazwa,"w")
+plik.write(zawartoœæ)
+plik.close()
+znaki=list(zawartoœæ)
+print(znaki)
+lista=[]
+for i in range(len(znaki)):
+    if znaki[i]=="a":
+        lista.append("4")
+    elif znaki[i]=="b":
+        lista.append("8")
+    else:
+        lista.append(znaki[i])
+    zawartoœæ1="".join(lista)
+
+
+nowanazwa=input(("wprowadŸ now¹ nazwê"))
+plik1=open(nowanazwa,"w")
+plik1.write(zawartoœæ1)
+plik1.close()
+
+
+zadanie 5
+
+import os.path
+import os
+import random
+nazwa=input(("podaj nazwê pliku"))
+file1=open(nazwa,"w")
+cyfry=[]
+liczby="123456789"
+los=random.randrange(100)
+for i in range(los):
+    los1=random.choice(liczby)
+    cyfry.append(los1)
+    toFile="".join(cyfry)
+file1.write(toFile)
+    
+file1.close()
+sum=0
+
+sumowanie=open(nazwa,"r").read()
+for i in sumowanie:
+    if i=="1":
+        sum+=1
+    elif i=="2":
+        sum+=2
+    elif i=="3":
+        sum+=3
+    elif i=="4":
+        sum+=4
+    elif i=="5":
+        sum+=5
+    elif i=="6":
+        sum+=6
+    elif i=="7":
+        sum+=7
+    elif i=="8":
+        sum+=8
+    elif i=="9":
+        sum+=9
+print(sum)
+    
+zadanie 6
+
+import os.path
+import os
+import random
+import time
+slowo= 'qwertyuioplkjhgfdsazxcvbnm'
+x =random.choice(slowo)
+print('jesteœ gotów?')
+input()
+print('litera pojawi siê za 5 sekund')
+time.sleep(5)
+start=time.clock()
+print(x)
+z = input()
+if z==x:
+	koniec=time.clock()
+	c=koniec-start
+	y = round(c,2)
+	r=('wygra³eœ w', y,'s')
+if z!=x:
+	koniec=time.clock()
+	c=koniec-start
+	j = round(c,2)
+	r=('przegra³eœ w', j,'s')
+tekst=[]
+linia=(str(r))
+tekst.append(linia)
+plik=open("eksperyment"+".txt","w")
+plik.writelines(tekst)
+plik.close()
+
+    
+
+zadanie 7
+   
+    
+import os.path
+import os
+import random
+import time
+
+kod=input(("Podaj kod badanego: "))
+k=('Kod: ',kod)
+wiek=input(("Podaj wiek badanego: "))
+w=('Wiek: ',wiek)
+p³eæ=input(("Podaj p³eæ badanego: "))
+p=('P³eæ: ',p³eæ)
+print("WprowadŸ datê prowadzenia badania w kolejnoœæi, rok, miesi¹c, dzieñ")
+rok=input()
+miesi¹c=input()
+dzieñ=input()
+data=(dzieñ, miesi¹c, rok)
+d=('Data: ',data)
+
+
+def stworzenie(kod):
+    stworzenie=open(kod+".txt","w")
+    stworzenie.close()
+
+def wpisaniedanych():
+    tekst=[]
+    linia=(str(k))
+    tekst.append(linia+"\n")
+    plik=open(kod+".txt","a")
+    plik.writelines(tekst)
+    plik.close()
+
+    tekst1=[]
+    linia1=(str(w))
+    tekst1.append(linia1+"\n")
+    plik1=open(kod+".txt","a")
+    plik1.writelines(tekst1)
+    plik1.close()
+
+    tekst2=[]
+    linia2=(str(p))
+    tekst2.append(linia2+"\n")
+    plik2=open(kod+".txt","a")
+    plik2.writelines(tekst2)
+    plik2.close()
+
+    tekst3=[]
+    linia3=(str(d))
+    tekst3.append(linia3+"\n")
+    plik3=open(kod+".txt","a")
+    plik3.writelines(tekst3)
+    plik3.close()
+
+def eksperyment():
+    slowo= 'qwertyuioplkjhgfdsazxcvbnm'
+    x =random.choice(slowo)
+    print('jesteœ gotów?')
+    input()
+    print('litera pojawi siê za 3 sekund')
+    time.sleep(3)
+    start=time.clock()
+    print(x)
+    z = input()
+    if z==x:
+        koniec=time.clock()
+        c=koniec-start
+        y = round(c,2)
+        wynik=('wygra³eœ w', y,'s')
+    if z!=x:
+        koniec=time.clock()
+        c=koniec-start
+        j = round(c,2)
+        wynik=('przegra³eœ w', j,'s')
+    return wynik
+
+def przypisanie_wyniku(wynik):
+    tekst=[]
+    linia=(str(wynik))
+    tekst.append(linia+"\n")
+    plik=open(kod+".txt","a")
+    plik.writelines(tekst)
+    plik.close()
+stworzenie(kod)
+wpisaniedanych()
+
+for i in range(5):
+    wynik=eksperyment()
+    przypisanie_wyniku(wynik)
+
+zadanie 9
+
+
+import os.path
+import os
+import random
+import time
+
+zawartoœæ=[]
+for i in range(5):
+    tekst=input("Wpisz zawartoœæ linijki ")
+    linia=str(tekst)
+    zawartoœæ.append(linia+"\n")
+stworzenie=open("plik"+".txt","w")
+stworzenie.writelines(zawartoœæ)
+stworzenie.close()
+
+nazwa=input(("podaj now¹ nazwê pliku"))
+os.rename('plik.txt',nazwa+".txt")
+
+
+
+zadanie 10
+
+import time
+def menu():
+    while True:
+    print("1.Stworzenie pliku")
+    print("2.Zapis do pliku")
+    print("3.Odczyt pliku")
+    print("4.Zmiana nazwy pliku")
+    print("5.Wyjœcie")
+    choice=int(input())
+    if choice==1:
+        nazwa=input(("Podaj nazwê pliku"))
+        return(n
+        stworzenie(nazwa)
+    elif choice=2:
+        wpis=input(("Co chcesz dopisaæ do pliku?"))
+        zapis(wpis)
+def stworzenie(nazwa):
+    plik=open(nazwa+".txt","w")
+    plik.close()
+def zapis(wpis):
+    zawartoœæ=(str(wpis))
+    plik=open(
+zawartoœæ=[]
+for i in range(5):
+    tekst=input("Wpisz zawartoœæ linijki ")
+    linia=str(tekst)
+    zawartoœæ.append(linia+"\n")
+stworzenie=open("plik"+".txt","w")
+stworzenie.writelines(zawartoœæ)
+stworzenie.close()
+
+nazwa=input(("podaj now¹ nazwê pliku"))
+os.rename('plik.txt',nazwa+".txt")
+
+
+zadanie 10
+
+import os.path
+import os
+import random
+import time
+
+def stworzenie():
+    os.system('cls')
+    nazwa=input(("podaj nazwê pliku"))
+    plik=open(nazwa,"w")
+    plik.close()
+
+def zapis():
+    os.system('cls')
+    wpis=input(("co chcesz dopisaæ do pliku"))
+    zawartoœæ=(str(wpis))
+    nazwa=input(("podaj nazwê pliku, do którego chcesz coœ dodaæ"))
+    file=open(nazwa,"a")
+    file.write(zawartoœæ)
+    file.close()
+
+def odczyt():
+    os.system('cls')
+    nazwa=input(("Wpisz nazwe pliku, który chcesz odczytaæ"))
+    file=open(nazwa,"r")
+    print(file.read())
+    file.close()
+    input()
+
+def zmiananazwy():
+    os.system('cls')
+    nazwa=input(("wpisz nazwe pliku, którego nazwe chcesz zmieniæ"))
+    nazwa2=input(("wpisz now¹ nazwe dla pliku"))
+    os.rename(nazwa,nazwa2)
+    
+def menu():
+    while True:
+        os.system('cls')
+        print("1.Stworzenie pliku")
+        print("2.Zapis do pliku")
+        print("3.Odczyt pliku")
+        print("4.Zmiana nazwy pliku")
+        print("5.Wyjœcie")
+        choice=int(input())
+        if choice==1:
+            os.system('cls')
+            stworzenie()
+            menu()
+        elif choice==2:
+            os.system('cls')
+            zapis()
+            menu()
+        elif choice==3:
+            os.system('cls')
+            odczyt()
+            menu()
+        elif choice==4:
+            os.system('cls')
+            zmiananazwy()
+            menu()
+        elif choice==5:
+            os.system('cls')
+            break
+
+menu()  
+
+
+
+
+
+
+
+        
